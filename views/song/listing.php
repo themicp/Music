@@ -2,19 +2,19 @@
     if ( $initial ) {
 ?>
         <form>
-            <input type='text' x-webkit-speech />
+            <input id='command' type='text' x-webkit-speech />
         </form>
         <div id='songs'>
 <?php
     }
 ?>
-        <ul>
+        <ol>
 <?php
 foreach( $songs as $song ) {
     echo "<li id='" . $song[ 'SongID' ] . "'>" . $song[ 'SongName' ] . "</li>";
 }
 ?>
-        </ul>
+        </ol>
 <?php
     if ( $initial ) {
 ?>

@@ -3,6 +3,6 @@ object, embed {
     height: 40px;
 }
 
-ul li {
+ol li {
     cursor: pointer;
 }
