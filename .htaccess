@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)$ index.php?resource=$1&method=$2 [L,QSA]
+
+# books
+RewriteRule ^song/([0-9]+)$ index.php?resource=song&method=view&songid=$1 [L,QSA]

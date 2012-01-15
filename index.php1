@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Music Library</title>
+        <link href='css/style.css' rel='stylesheet' type='text/css'/>
+        <script type='application/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
+    </head>
+    <body>
+        <form>
+            <input type='text' x-webkit-speech />
+        </form>
+
+        <?php
+        $API_KEY = "f5f67b8cecd98b2848f4ca2bef9ccb51";
+        $term = "Rammstein";
+        $url = "http://tinysong.com/s/" . urlencode( $term ) . "?format=json&limit=32&key=" . $API_KEY;
+        $handler = curl_init();
+        curl_setopt( $handler, CURLOPT_URL, $url );
+        curl_setopt( $handler, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt( $handler, CURLOPT_CONNECTTIMEOUT, 2);
+        $result = curl_exec( $handler );
+        curl_close( $handler );
+        var_dump( $result );
+        ?>
+
+    <script src='js/behavior.js' type='application/javascript'></script>
+    </body>
+</html>
