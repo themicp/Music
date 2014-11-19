@@ -25,9 +25,11 @@ $( "form" ).submit( function() {
 
 function execute( command ) {
     var i, term = "";
+    var beep = $( "audio" )[ 0 ];
     command = command.split( " " );
     command[ 0 ] = command[ 0 ].toLowerCase();
     if ( command[ 0 ] == "search" ) {
+        beep.play();
         for ( i = 1; i < command.length; ++i ) {
             term += command[ i ] + " ";
         }
@@ -35,6 +37,7 @@ function execute( command ) {
         Song.search( term );
     }
     if ( command[ 0 ] == "play" ) {
+        beep.play();
         command[ 1 ] = command[ 1 ].toLowerCase();
         if ( !( command[ 1 ]*1 > 0 )  ) {
             error = false;
@@ -49,7 +52,16 @@ function execute( command ) {
         error = false;
     }
     if ( command[ 0 ] == "stop" ) {
+        beep.play();
         Song.player( "0" );
+    }
+    if ( command[ 0 ] == "move" ) {
+        beep.play();
+        // TODO: move song <number> to playlist
+    }
+    if ( command[ 0 ] == "playlist" ) {
+        beep.play();
+        // TODO: play song <number> from playlist
     }
     return false;
 }

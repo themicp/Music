@@ -2,7 +2,10 @@
     if ( $initial ) {
 ?>
         <form>
-            <input id='command' type='text' x-webkit-speech />
+            <input id='command' type='text' x-webkit-speech speech  />
+            <audio>
+                <source src="effects/beep.mp3" type="audio/mp3" />
+            </audio>
         </form>
         <div id='songs'>
 <?php

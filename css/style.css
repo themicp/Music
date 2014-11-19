@@ -6,3 +6,7 @@ object, embed {
 ol li {
     cursor: pointer;
 }
+
+audio {
+    display: none;
+}
